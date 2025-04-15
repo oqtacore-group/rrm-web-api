@@ -12,7 +12,7 @@ RRM.WebApi/
 │   ├── RRM.Domain/             # Domain layer (entities, interfaces)
 │   ├── RRM.Infrastructure/     # Infrastructure layer (data access, external services)
 │   └── RRM.Shared/             # Shared utilities and common code
-├── tests/
+├── test/
 │   ├── RRM.WebApi.Tests/       # Unit tests for Web API
 │   ├── RRM.Application.Tests/  # Unit tests for Application layer
 │   ├── RRM.Domain.Tests/      # Unit tests for Domain layer
@@ -24,7 +24,7 @@ RRM.WebApi/
 
 - .NET 8.0 SDK or later
 - Visual Studio 2022 or Visual Studio Code
-- SQL Server (for database)
+- PostgreSQL (for database)
 - Git
 
 ## Getting Started
@@ -47,7 +47,7 @@ RRM.WebApi/
 
 4. Run the application:
    ```bash
-   dotnet run --project src/RRM.WebApi
+   dotnet run --project src/Rrm.WebApi
    ```
 
 ## Testing
