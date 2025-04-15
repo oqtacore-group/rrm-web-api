@@ -22,7 +22,7 @@ RRM.WebApi/
 
 ## Prerequisites
 
-- .NET 8.0 SDK or later
+- .NET 9.0 SDK or later
 - Visual Studio 2022 or Visual Studio Code
 - PostgreSQL (for database)
 - Git

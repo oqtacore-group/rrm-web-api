@@ -1,3 +1,7 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Rrm.WebApi.Health;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +24,10 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Configure health checks
+builder.Services.AddHealthChecks()
+    .AddCheck<AthenaHealthCheck>("Athena");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +40,11 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger"; // This will make Swagger UI available at /swagger
     });
 }
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
