@@ -1,0 +1,236 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Application\\Oqtacore.Rrm.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Application\\Oqtacore.Rrm.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Application\\Oqtacore.Rrm.Application.csproj",
+        "projectName": "Oqtacore.Rrm.Application",
+        "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Application\\Oqtacore.Rrm.Application.csproj",
+        "packagesPath": "C:\\Users\\mrbim\\.nuget\\packages\\",
+        "outputPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mrbim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj": {
+                "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj"
+              },
+              "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\Oqtacore.Rrm.Infrastructure.csproj": {
+                "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\Oqtacore.Rrm.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
+            "TimeZoneConverter": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj",
+        "projectName": "Oqtacore.Rrm.Domain",
+        "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj",
+        "packagesPath": "C:\\Users\\mrbim\\.nuget\\packages\\",
+        "outputPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mrbim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\Oqtacore.Rrm.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\Oqtacore.Rrm.Infrastructure.csproj",
+        "projectName": "Oqtacore.Rrm.Infrastructure",
+        "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\Oqtacore.Rrm.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mrbim\\.nuget\\packages\\",
+        "outputPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mrbim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj": {
+                "projectPath": "C:\\MyPrograms\\OQTAQORE\\transfer\\back\\oqtacore-rrm-api-main\\app\\Oqtacore.Rrm.Domain\\Oqtacore.Rrm.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
