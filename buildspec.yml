@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0 
+    commands:
+      - echo "Navigating to app/Oqtacore.Rrm.Api directory..."
+      - cd app/Oqtacore.Rrm.Api  # Navigate to the correct folder
+      - echo "Restoring dependencies..."
+      - dotnet restore Oqtacore.Rrm.Api.csproj  # Restore dependencies
+
+  build:
+    commands:
+      - echo "Building the project..."
+      - dotnet build Oqtacore.Rrm.Api.csproj --configuration Release  # Build the project in Release mode
+
+  post_build:
+    commands:
+      - echo "Publishing the application..."
+      - dotnet publish Oqtacore.Rrm.Api.csproj --configuration Release --output ./publish -r linux-x64  # Publish for Linux
+      - echo "Running tests..."
+      - dotnet test Oqtacore.Rrm.Api.csproj --configuration Release  # Run tests after build
+
+artifacts:
+  files:
+    - 'app/Oqtacore.Rrm.Api/publish/**/*'  # Collect published files
+  discard-paths: yes
