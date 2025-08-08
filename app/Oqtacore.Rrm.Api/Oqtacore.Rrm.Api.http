@@ -1,0 +1,6 @@
+@Oqtacore.Rrm.Api_HostAddress = http://localhost:5253
+
+GET {{Oqtacore.Rrm.Api_HostAddress}}/api/Clients/
+Accept: application/json
+
+###

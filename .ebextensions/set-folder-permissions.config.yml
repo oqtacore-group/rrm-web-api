@@ -1,0 +1,5 @@
+container_commands:
+  01_create_upload_folder:
+    command: "mkdir -p /var/app/current/wwwroot/Content"
+  02_set_upload_permissions:
+    command: "chmod -R 775 /var/app/current/wwwroot/Content && chown -R webapp:webapp /var/app/current/wwwroot/Content"

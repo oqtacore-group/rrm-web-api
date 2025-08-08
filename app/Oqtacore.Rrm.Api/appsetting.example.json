@@ -1,0 +1,18 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "YourConnectionStringHere"
+  },
+  "Telegram": {
+    "Token": "YourTelegramTokenHere"
+  },
+  "AWS": {
+    "Profile": "YourProfileHere",
+    "Region": "YourRegionStringHere"
+  },
+  "Environment": {
+    "Debug": "true",
+    "Services": "false"
+  },
+  "DomainUrl": "https://your-api-domain.com",
+  "ApplicationDomainUrl": "https://your-app-domain.com"
+}
