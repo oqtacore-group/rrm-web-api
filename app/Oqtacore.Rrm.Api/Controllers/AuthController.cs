@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Oqtacore.Rrm.Domain.Models;
+using Oqtacore.Rrm.Application.Configs;
+using Microsoft.Extensions.Options;
 
 namespace Oqtacore.Rrm.Api.Controllers
 {
@@ -21,13 +23,16 @@ namespace Oqtacore.Rrm.Api.Controllers
         private readonly ApplicationContext _dataContext;
         private readonly IConfiguration _configuration;
         private readonly ILogger<AuthController> _logger;
-        public AuthController(UserManager<AspNetUser> userManager, SignInManager<AspNetUser> signInManager, ApplicationContext dataContext, IConfiguration configuration, ILogger<AuthController> logger)
+        private readonly JwtSettings _jwtSettings;
+
+        public AuthController(UserManager<AspNetUser> userManager, SignInManager<AspNetUser> signInManager, ApplicationContext dataContext, IConfiguration configuration, ILogger<AuthController> logger , IOptions<JwtSettings> jwtSettings)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _dataContext = dataContext;
             _configuration = configuration;
             _logger = logger;
+            _jwtSettings = jwtSettings.Value;
         }
 
         [HttpPost("login")]
@@ -99,7 +104,7 @@ namespace Oqtacore.Rrm.Api.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
