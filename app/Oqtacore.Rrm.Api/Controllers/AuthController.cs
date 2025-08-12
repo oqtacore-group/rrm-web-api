@@ -99,7 +99,7 @@ namespace Oqtacore.Rrm.Api.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BZJwFx1ZC/+NdR6XNwK1CAuwAZ4fO1vZBHpR8FFAFzA="));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
