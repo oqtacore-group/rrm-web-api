@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Oqtacore.Rrm.Domain.Models;
+using Oqtacore.Rrm.Application.Configs;
+using Microsoft.Extensions.Options;
 
 namespace Oqtacore.Rrm.Api.Controllers
 {
@@ -21,13 +23,16 @@ namespace Oqtacore.Rrm.Api.Controllers
         private readonly ApplicationContext _dataContext;
         private readonly IConfiguration _configuration;
         private readonly ILogger<AuthController> _logger;
-        public AuthController(UserManager<AspNetUser> userManager, SignInManager<AspNetUser> signInManager, ApplicationContext dataContext, IConfiguration configuration, ILogger<AuthController> logger)
+        private readonly JwtSettings _jwtSettings;
+
+        public AuthController(UserManager<AspNetUser> userManager, SignInManager<AspNetUser> signInManager, ApplicationContext dataContext, IConfiguration configuration, ILogger<AuthController> logger , IOptions<JwtSettings> jwtSettings)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _dataContext = dataContext;
             _configuration = configuration;
             _logger = logger;
+            _jwtSettings = jwtSettings.Value;
         }
 
         [HttpPost("login")]
@@ -99,12 +104,13 @@ namespace Oqtacore.Rrm.Api.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BZJwFx1ZC/+NdR6XNwK1CAuwAZ4fO1vZBHpR8FFAFzA="));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
+            
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Issuer"],
+                issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
                 claims: claims,
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds);

@@ -13,6 +13,11 @@
     "Debug": "true",
     "Services": "false"
   },
+  "Jwt": {
+    "SecretKey": "",
+    "Issuer": "rrm",
+    "Audience": "rrm"
+  },
   "DomainUrl": "https://your-api-domain.com",
   "ApplicationDomainUrl": "https://your-app-domain.com"
 }

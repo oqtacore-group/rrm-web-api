@@ -39,6 +39,7 @@ try
     var appConnectionString = builder.Configuration.GetConnectionString("SqlServerConnection");
     var logConnectionString = builder.Configuration.GetConnectionString("SqlServerConnection");
     var telegramBotToken = builder.Configuration["Telegram:id"];
+    builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
     builder.Services.Configure<PlatrumMetricsSettings>(builder.Configuration.GetSection("PlatrumMetricsSettings"));
 
     if (env != "hes" && env != "prod")
@@ -121,8 +122,11 @@ try
     //builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 
     // Configure JWT Authentication
-    var jwtKey = builder.Configuration["Jwt:Key"];
-    var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+    var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>()
+                 ?? throw new InvalidOperationException("Jwt settings are missing.");
+
+    var jwtKey = jwtSettings.SecretKey;
+    var jwtIssuer = jwtSettings.Issuer;
 
     // Add JWT authentication
     builder.Services.AddAuthentication(options =>
