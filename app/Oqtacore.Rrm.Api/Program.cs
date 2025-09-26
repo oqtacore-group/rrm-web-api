@@ -94,7 +94,9 @@ try
         {
             policy.WithOrigins("https://rrm.oqtacore.com", "https://staging-rrm.oqtacore.com", "https://www.staging-rrm.oqtacore.com", "http://localhost:4200")
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials()
+                  .SetIsOriginAllowedToAllowWildcardSubdomains();
         });
     });
 
@@ -202,6 +204,10 @@ try
     }
 
     // Configure the HTTP request pipeline.
+    
+    // CORS must be one of the first middleware in the pipeline
+    app.UseCors("AllowAllOrigins");
+
     if (app.Environment.IsDevelopment())
     {
         //app.UseSwagger();
@@ -210,9 +216,6 @@ try
 
     app.UseSwagger();
     app.UseSwaggerUI();
-
-    // Use the CORS policy in the app
-    app.UseCors("AllowAllOrigins");
 
     app.MapHealthChecks("/_health", new HealthCheckOptions
     {
