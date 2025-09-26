@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="TimeZoneConverter" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oqtacore.Rrm.Domain\Oqtacore.Rrm.Domain.csproj" />
+    <ProjectReference Include="..\Oqtacore.Rrm.Infrastructure\Oqtacore.Rrm.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
